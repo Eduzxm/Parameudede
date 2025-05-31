@@ -1,7 +1,10 @@
-<!DOCTYPE html><html lang="pt-BR"><head>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Para o meu Dede 💗</title>
+  <link rel="icon" href="https://emojiapi.dev/api/v1/heart/64.png" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -44,10 +47,11 @@
       color: white;
       border: none;
       padding: 10px 20px;
-      margin: 5px;
+      margin: 10px auto;
       border-radius: 12px;
       cursor: pointer;
       animation: pulse 2s infinite;
+      display: block;
     }
     .game-section button:hover {
       background-color: #d63384;
@@ -74,15 +78,31 @@
     section {
       animation: fadeIn 1s ease-in-out;
     }
+
+    /* Surpresinha fade-in */
+    #surpresa {
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    #surpresa.mostrar {
+      display: block;
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
   <audio autoplay loop>
     <source src="audio/amor-coloriu.mp3" type="audio/mpeg" />
-  </audio>  <header>
+  </audio>
+
+  <header>
     <h1>Oii, meu bombonzinho! 💗</h1>
     <p>Feliz aniversário! Muito obrigada por ter nascido!!! Tudo aqui foi feito com muito carinho pra você, com algumas lembrancinhas nossas! Aproveite muito!</p>
-  </header>  <section>
+    <button onclick="toggleMusic()" style="margin-top: 1rem; padding: 8px 16px; border: none; border-radius: 10px; background-color: #e91e63; color: white; cursor: pointer;">🎵 Pausar música</button>
+  </header>
+
+  <section>
     <h2>🕰️ Nossa história – Linha do tempo</h2>
     <ul style="list-style:none; padding:0;">
       <li>📍 Nos conhecemos naquela ilha no Fogo Grátis</li>
@@ -99,31 +119,45 @@
       <li>🌍 Nosso primeiro mapa no Minecraft</li>
       <li>💌 As declarações melosas e enormes</li>
     </ul>
-  </section>  <section>
+  </section>
+
+  <section>
     <h2>💌 Carta de amor para o meu lindo namorado</h2>
     <p>...[conteúdo da carta permanece o mesmo]...</p>
-  </section>  <section>
+  </section>
+
+  <section>
     <h2>📸 Nossa Galeria Fofa</h2>
     <div class="gallery">
       <!-- imagens continuam aqui -->
     </div>
-  </section>  <section>
+  </section>
+
+  <section>
     <h2>🎵 Nossa Playlist</h2>
     <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1kkJ4YjYvhabYTCIodlG6T?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  </section>  <section class="game-section">
+  </section>
+
+  <section class="game-section">
     <h2>🎮 Joguinho do Mozão</h2>
     <p>Vamos ver se lembra direitinho, hein? 💘</p>
     <div id="game"></div>
     <div class="result" id="result"></div>
-  </section>  <!-- SURPRESA -->  <section>
+  </section>
+
+  <section>
     <h2>🎁 Surpresinha Fofa</h2>
     <button onclick="mostrarSurpresa()" style="background-color:#ff69b4;color:white;padding:10px 20px;border:none;border-radius:12px;cursor:pointer;">Clique aqui pra descobrir 💌</button>
-    <div id="surpresa" style="display:none;margin-top:1rem;background:#fff0f5;padding:1rem;border-radius:12px;border:2px solid #f8bbd0;max-width:600px;margin-inline:auto;">
+    <div id="surpresa" style="margin-top:1rem;background:#fff0f5;padding:1rem;border-radius:12px;border:2px solid #f8bbd0;max-width:600px;margin-inline:auto;">
       <p style="white-space:pre-line;">...[poema permanece o mesmo]...</p>
     </div>
-  </section>  <footer>
+  </section>
+
+  <footer>
     <p>Com muito amor, da sua docinho 💗</p>
-  </footer>  <script>
+  </footer>
+
+  <script>
     const questions = [
       {
         question: "Quem foi que soltou um “amor” primeiro?",
@@ -184,9 +218,52 @@
     }
 
     function mostrarSurpresa() {
-      document.getElementById('surpresa').style.display = 'block';
+      const surpresa = document.getElementById('surpresa');
+      surpresa.classList.add('mostrar');
     }
 
+    function toggleMusic() {
+      const bgMusic = document.querySelector('audio');
+      const button = event.target;
+      if (bgMusic.paused) {
+        bgMusic.play();
+        button.textContent = '🎵 Pausar música';
+      } else {
+        bgMusic.pause();
+        button.textContent = '🎵 Tocar música';
+      }
+    }
+
+    // Corações flutuando
+    const hearts = [];
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.textContent = '💗';
+      heart.style.position = 'fixed';
+      heart.style.left = `${Math.random() * 100}vw`;
+      heart.style.top = '100vh';
+      heart.style.fontSize = `${Math.random() * 24 + 16}px`;
+      heart.style.animation = `subir 5s ease-out forwards`;
+      document.body.appendChild(heart);
+      hearts.push(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }, 800);
+
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes subir {
+        to {
+          transform: translateY(-120vh);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Inicia o quiz
     showQuestion();
-  </script></body>
+  </script>
+</body>
 </html>
