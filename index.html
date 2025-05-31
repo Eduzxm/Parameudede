@@ -79,7 +79,6 @@
       animation: fadeIn 1s ease-in-out;
     }
 
-    /* Surpresinha fade-in */
     #surpresa {
       display: none;
       opacity: 0;
@@ -123,13 +122,34 @@
 
   <section>
     <h2>💌 Carta de amor para o meu lindo namorado</h2>
-    <p>...[conteúdo da carta permanece o mesmo]...</p>
+    <p style="white-space: pre-line;">
+Oi, meu amor. Meu amorzinho💛
+
+Hoje é seu dia! e eu queria poder te abraçar forte, olhar nos seus olhos, te abraçar... Como ainda não dá, essa é a forma que encontrei para alcançar você💗
+
+Desde o dia em que a gente se conheceu naquele joguinho, minha vida começou a mudar. Eu não fazia ideia, que aquele garoto "ignorado", iria chacoalhar minha vida inteira. Era o início de uma história que só faz sentido com você.
+
+Lembro da nossa primeira madrugada conversando. Foi leve, foi gostoso, foi divertido. Meu coração já estava errando as batidas😭
+
+Depois disso, tudo só foi ficando mais especial...
+
+Obrigada por existir, por ser quem você é, e por me permitir viver tudo isso com você. Você é fofo, engraçado, carinhoso, e o meu bombonzinho favorito. Feliz aniversário, meu amor! Que esse dia te traga tudo que você merece!! e que esse site seja um pedacinho do meu amor por você.
+
+Com carinho (e idiotices),  
+Sua bombonzinha 💛
+    </p>
   </section>
 
   <section>
     <h2>📸 Nossa Galeria Fofa</h2>
     <div class="gallery">
-      <!-- imagens continuam aqui -->
+      <div class="polaroid"><img src="galeria/img1.jpg" alt="Foto 1"><p>Nosso primeiro print juntinhos 💕</p></div>
+      <div class="polaroid"><img src="galeria/img2.jpg" alt="Foto 2"><p>Uma call de boas risadas 🤭</p></div>
+      <div class="polaroid"><img src="galeria/img3.jpg" alt="Foto 3"><p>Print do nosso joguinho favorito 🎮</p></div>
+      <div class="polaroid"><img src="galeria/img4.jpg" alt="Foto 4"><p>Aquele momento que virou lembrança 💌</p></div>
+      <div class="polaroid"><img src="galeria/img5.jpg" alt="Foto 5"><p>Juntinhos no Minecraft 🧱</p></div>
+      <div class="polaroid"><img src="galeria/img6.jpg" alt="Foto 6"><p>Nosso emoji favorito 💗</p></div>
+      <div class="polaroid"><img src="galeria/img7.jpg" alt="Foto 7"><p>Print besta que virou amor 😅</p></div>
     </div>
   </section>
 
@@ -147,9 +167,20 @@
 
   <section>
     <h2>🎁 Surpresinha Fofa</h2>
-    <button onclick="mostrarSurpresa()" style="background-color:#ff69b4;color:white;padding:10px 20px;border:none;border-radius:12px;cursor:pointer;">Clique aqui pra descobrir 💌</button>
+    <button onclick="mostrarSurpresa()">Clique aqui pra descobrir 💌</button>
     <div id="surpresa" style="margin-top:1rem;background:#fff0f5;padding:1rem;border-radius:12px;border:2px solid #f8bbd0;max-width:600px;margin-inline:auto;">
-      <p style="white-space:pre-line;">...[poema permanece o mesmo]...</p>
+      <p style="white-space: pre-line;">
+• O que de um grande amor se espera  
+É que tenha fogo  
+Que domine o pensamento  
+E traga sentido novo  
+Que tenha paixão, desejo  
+Que tenha abraço e beijo  
+E seja a melhor sensação  
+Que preencha a vida vazia  
+Manda embora a agonia  
+E que traga paz pro coração
+      </p>
     </div>
   </section>
 
@@ -234,7 +265,7 @@
       }
     }
 
-    // Corações flutuando
+    // Corações flutuantes
     const hearts = [];
     setInterval(() => {
       const heart = document.createElement('div');
@@ -246,23 +277,13 @@
       heart.style.animation = `subir 5s ease-out forwards`;
       document.body.appendChild(heart);
       hearts.push(heart);
-      setTimeout(() => {
-        heart.remove();
-      }, 5000);
+      setTimeout(() => heart.remove(), 5000);
     }, 800);
 
     const style = document.createElement('style');
-    style.textContent = `
-      @keyframes subir {
-        to {
-          transform: translateY(-120vh);
-          opacity: 0;
-        }
-      }
-    `;
+    style.textContent = `@keyframes subir { to { transform: translateY(-120vh); opacity: 0; } }`;
     document.head.appendChild(style);
 
-    // Inicia o quiz
     showQuestion();
   </script>
 </body>
