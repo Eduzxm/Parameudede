@@ -78,7 +78,6 @@
     section {
       animation: fadeIn 1s ease-in-out;
     }
-
     #surpresa {
       display: none;
       opacity: 0;
@@ -87,6 +86,25 @@
     #surpresa.mostrar {
       display: block;
       opacity: 1;
+    }
+
+    /* Botão de surpresa personalizado */
+    .botao-surpresa {
+      background: linear-gradient(135deg, #ff8ac7, #ff5da2);
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .botao-surpresa:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
     }
   </style>
 </head>
@@ -131,7 +149,9 @@ Desde o dia em que a gente se conheceu naquele joguinho, minha vida começou a m
 
 Lembro da nossa primeira madrugada conversando. Foi leve, foi gostoso, foi divertido. Meu coração já estava errando as batidas😭
 
-Depois disso, tudo só foi ficando mais especial...
+Depois disso, tudo só foi ficando mais especial. O momento em que percebi que estava completamente apaixonada por você. A revolta da "Dudinha" (nunca vou esquecer)— A primeira vez que te chamei de “meu bem”. A primeira vez que dissemos que sentíamos saudade, que dissemos "eu te amo", e tantas outras primeiras vezes que ficaram marcadas no meu coração.
+
+E nossa call em que rimos tanto que dormimos juntos? Jamais vou esquecer o tanto que ri. Sem falar nas horas e horas jogando, nas risadas, nas discussões bobas, nas nossas construções no Minecraft... tudo isso me faz ter certeza: você é meu lugar favorito, mesmo à distância, mesmo me estressando.
 
 Obrigada por existir, por ser quem você é, e por me permitir viver tudo isso com você. Você é fofo, engraçado, carinhoso, e o meu bombonzinho favorito. Feliz aniversário, meu amor! Que esse dia te traga tudo que você merece!! e que esse site seja um pedacinho do meu amor por você.
 
@@ -143,13 +163,13 @@ Sua bombonzinha 💛
   <section>
     <h2>📸 Nossa Galeria Fofa</h2>
     <div class="gallery">
-      <div class="polaroid"><img src="galeria/img1.jpg" alt="Foto 1"><p>Nosso primeiro print juntinhos 💕</p></div>
-      <div class="polaroid"><img src="galeria/img2.jpg" alt="Foto 2"><p>Uma call de boas risadas 🤭</p></div>
-      <div class="polaroid"><img src="galeria/img3.jpg" alt="Foto 3"><p>Print do nosso joguinho favorito 🎮</p></div>
-      <div class="polaroid"><img src="galeria/img4.jpg" alt="Foto 4"><p>Aquele momento que virou lembrança 💌</p></div>
-      <div class="polaroid"><img src="galeria/img5.jpg" alt="Foto 5"><p>Juntinhos no Minecraft 🧱</p></div>
-      <div class="polaroid"><img src="galeria/img6.jpg" alt="Foto 6"><p>Nosso emoji favorito 💗</p></div>
-      <div class="polaroid"><img src="galeria/img7.jpg" alt="Foto 7"><p>Print besta que virou amor 😅</p></div>
+      <div class="polaroid"><img src="galeria/img1.jpg" alt="Foto 1"><p>O DNA nas minhas veias me diz que você é quem eu venho procurando</p></div>
+      <div class="polaroid"><img src="galeria/img2.jpg" alt="Foto 2"><p>Eu vou te levar para um mundo completamente novo</p></div>
+      <div class="polaroid"><img src="galeria/img3.jpg" alt="Foto 3"><p>Eu ficarei confortável mesmo se você não falar nada. Este se tornou meu lar porque você está aqui</p></div>
+      <div class="polaroid"><img src="galeria/img4.jpg" alt="Foto 4"><p>Você usou meu coração antes mesmo do fogo se acender</p></div>
+      <div class="polaroid"><img src="galeria/img5.jpg" alt="Foto 5"><p>Quantas noites mais terei que permanecer acordado até que eu possa te ver?</p></div>
+      <div class="polaroid"><img src="galeria/img6.jpg" alt="Foto 6"><p>Vamos fazer uma porta no seu coração</p></div>
+      <div class="polaroid"><img src="galeria/img7.jpg" alt="Foto 7"><p>Em uma noite interminável foi você quem me deu a manhã</p></div>
     </div>
   </section>
 
@@ -167,7 +187,7 @@ Sua bombonzinha 💛
 
   <section>
     <h2>🎁 Surpresinha Fofa</h2>
-    <button onclick="mostrarSurpresa()">Clique aqui pra descobrir 💌</button>
+    <button class="botao-surpresa" onclick="mostrarSurpresa()">💌 Clique aqui pra descobrir a surpresinha 💖</button>
     <div id="surpresa" style="margin-top:1rem;background:#fff0f5;padding:1rem;border-radius:12px;border:2px solid #f8bbd0;max-width:600px;margin-inline:auto;">
       <p style="white-space: pre-line;">
 • O que de um grande amor se espera  
@@ -176,7 +196,7 @@ Que domine o pensamento
 E traga sentido novo  
 Que tenha paixão, desejo  
 Que tenha abraço e beijo  
-E seja a melhor sensação  
+E seja a melhor sensação (sensação)  
 Que preencha a vida vazia  
 Manda embora a agonia  
 E que traga paz pro coração
@@ -265,7 +285,7 @@ E que traga paz pro coração
       }
     }
 
-    // Corações flutuantes
+    // Corações flutuando
     const hearts = [];
     setInterval(() => {
       const heart = document.createElement('div');
@@ -277,14 +297,23 @@ E que traga paz pro coração
       heart.style.animation = `subir 5s ease-out forwards`;
       document.body.appendChild(heart);
       hearts.push(heart);
-      setTimeout(() => heart.remove(), 5000);
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
     }, 800);
 
     const style = document.createElement('style');
-    style.textContent = `@keyframes subir { to { transform: translateY(-120vh); opacity: 0; } }`;
+    style.textContent = `
+      @keyframes subir {
+        to {
+          transform: translateY(-120vh);
+          opacity: 0;
+        }
+      }
+    `;
     document.head.appendChild(style);
 
     showQuestion();
   </script>
 </body>
-</html>
+  </html>
