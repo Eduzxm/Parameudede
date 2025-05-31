@@ -88,7 +88,6 @@
       opacity: 1;
     }
 
-    /* Botão de surpresa personalizado */
     .botao-surpresa {
       background: linear-gradient(135deg, #ff8ac7, #ff5da2);
       color: white;
@@ -110,7 +109,7 @@
 </head>
 <body>
   <audio autoplay loop>
-    <source src="audio/amor-coloriu.mp3" type="audio/mpeg" />
+    <source src="amor-coloriu.mp3" type="audio/mpeg" />
   </audio>
 
   <header>
@@ -163,13 +162,13 @@ Sua bombonzinha 💛
   <section>
     <h2>📸 Nossa Galeria Fofa</h2>
     <div class="gallery">
-      <div class="polaroid"><img src="galeria/img1.jpg" alt="Foto 1"><p>O DNA nas minhas veias me diz que você é quem eu venho procurando</p></div>
-      <div class="polaroid"><img src="galeria/img2.jpg" alt="Foto 2"><p>Eu vou te levar para um mundo completamente novo</p></div>
-      <div class="polaroid"><img src="galeria/img3.jpg" alt="Foto 3"><p>Eu ficarei confortável mesmo se você não falar nada. Este se tornou meu lar porque você está aqui</p></div>
-      <div class="polaroid"><img src="galeria/img4.jpg" alt="Foto 4"><p>Você usou meu coração antes mesmo do fogo se acender</p></div>
-      <div class="polaroid"><img src="galeria/img5.jpg" alt="Foto 5"><p>Quantas noites mais terei que permanecer acordado até que eu possa te ver?</p></div>
-      <div class="polaroid"><img src="galeria/img6.jpg" alt="Foto 6"><p>Vamos fazer uma porta no seu coração</p></div>
-      <div class="polaroid"><img src="galeria/img7.jpg" alt="Foto 7"><p>Em uma noite interminável foi você quem me deu a manhã</p></div>
+      <div class="polaroid"><img src="img1.jpg" alt="Foto 1"><p>O DNA nas minhas veias me diz que você é quem eu venho procurando</p></div>
+      <div class="polaroid"><img src="img2.jpg" alt="Foto 2"><p>Eu vou te levar para um mundo completamente novo</p></div>
+      <div class="polaroid"><img src="img3.jpg" alt="Foto 3"><p>Eu ficarei confortável mesmo se você não falar nada. Este se tornou meu lar porque você está aqui</p></div>
+      <div class="polaroid"><img src="img4.jpg" alt="Foto 4"><p>Você usou meu coração antes mesmo do fogo se acender</p></div>
+      <div class="polaroid"><img src="img5.jpg" alt="Foto 5"><p>Quantas noites mais terei que permanecer acordado até que eu possa te ver?</p></div>
+      <div class="polaroid"><img src="img6.jpg" alt="Foto 6"><p>Vamos fazer uma porta no seu coração</p></div>
+      <div class="polaroid"><img src="img7.jpg" alt="Foto 7"><p>Em uma noite interminável foi você quem me deu a manhã</p></div>
     </div>
   </section>
 
@@ -242,7 +241,7 @@ E que traga paz pro coração
       }
     ];
 
-    const popSound = new Audio('audio/click.mp3');
+    const popSound = new Audio('click.mp3');
     let current = 0;
     let score = 0;
 
@@ -285,7 +284,6 @@ E que traga paz pro coração
       }
     }
 
-    // Corações flutuando
     const hearts = [];
     setInterval(() => {
       const heart = document.createElement('div');
@@ -316,4 +314,4 @@ E que traga paz pro coração
     showQuestion();
   </script>
 </body>
-  </html>
+</html>
